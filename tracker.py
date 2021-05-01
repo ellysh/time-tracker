@@ -17,7 +17,7 @@ def print_usage(usage):
 def write_time_to_csv(activity, start_time):
   end_time = time.time()
 
-  print("activity = {} start_time = {} end_time = {}".format(activity, start_time, end_time))
+  print("{};{};{}".format(activity, start_time, end_time))
 
 def track_activity(activity):
   start_time = time.time()
