@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import sys
 import time
 
 _USAGE = """Usage: tracker.py <activity>
@@ -9,12 +10,16 @@ Example:
     tracker.py work
 """
 
-def write_time_to_csv(start_time):
+def print_usage(usage):
+  sys.stderr.write(usage)
+  sys.exit(1)
+
+def write_time_to_csv(activity, start_time):
   end_time = time.time()
 
-  print("start_time = {} end_time = {}".format(start_time, end_time))
+  print("activity = {} start_time = {} end_time = {}".format(activity, start_time, end_time))
 
-def main():
+def track_activity(activity):
   start_time = time.time()
 
   try:
@@ -22,7 +27,16 @@ def main():
       time.sleep(0.5)
 
   except KeyboardInterrupt:
-    write_time_to_csv(start_time)
+    write_time_to_csv(activity, start_time)
+
+def main():
+
+  if len(sys.argv) == 2:
+    activity = sys.argv[1]
+  else:
+    print_usage(_USAGE)
+
+  track_activity(activity)
 
 if __name__ == '__main__':
   main()
