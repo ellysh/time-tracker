@@ -2,6 +2,7 @@
 
 set -e
 
+ACTIVITY="work"
 REPORTS_DIR="csv"
 
-./stat.py work "$REPORTS_DIR/$(date +%Y-%m-%d).csv"
+./stat.py "$ACTIVITY" "$REPORTS_DIR/$(date +%Y-%m-%d).csv"
