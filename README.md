@@ -1,6 +1,6 @@
 # Time Tracker 0.1v
 
-This is an elementary time tracking system. It stores statistics of your activities in CSV format. Than you can retrieve the statistic for each specific date.
+This is an elementary time tracking system. It stores statistics of your activities in CSV format. You can retrieve this statistic for each specific date.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ Stop the wrapper by the Ctrl+C shortcut too.
 
 The wrapper stores CSV reports in the "csv" subdirectory.
 
-You can change the activity name and the path for reports in the `tracker.sh` script. Specify these parameters in the `ACTIVITY` and `REPORTS_DIR` variables there.
+You can change the activity name and the path for reports in the `tracker.sh` wrapper. Specify these parameters in the `ACTIVITY` and `REPORTS_DIR` variables there.
 
 ### Retrieving Statistic
 
@@ -37,9 +37,11 @@ Here is an example to retrieve statistics for the current date:
 ./stat.py work "csv/$(date +%Y-%m-%d).csv"
 ```
 
-It shows the time you spent doing the `work` activity.
+It shows the overall time you spent doing the `work` activity.
 
 The same data you can retrieve with the Bash wrapper:
 ```bash
 ./stat.sh
 ```
+
+The `stat.sh` wrapper has the same `ACTIVITY` and `REPORTS_DIR` variables as the `tracker.sh` script.
