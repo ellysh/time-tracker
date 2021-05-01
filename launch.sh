@@ -2,4 +2,6 @@
 
 set -e
 
-./tracker.py work >> "$(date +%Y-%m-%d).csv"
+REPORTS_DIR="csv"
+
+./tracker.py work >> "$REPORTS_DIR/$(date +%Y-%m-%d).csv"
