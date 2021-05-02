@@ -15,18 +15,18 @@ Here is an example to launch the tracker script:
 ./tracker.py work >> "csv/$(date +%Y-%m-%d).csv"
 ```
 
-The `work` means the name for your activity.
+The "work" parameter means the name for your activity.
 
-When you are done with your activity, interrupt the script by the Ctrl+C shortcut.
+When you are done with your activity, interrupt the script by the Ctrl+C shortcut. When you come back to your activity, start the script again. It will accumulate your workflow in the specified CSV file.
 
-Another option is to use the Bash wrapper:
+Another option is to use the Bash wrapper instead of the `tracker.py` script. Run the wrapper this way:
 ```bash
 ./tracker.sh
 ```
 
 Stop the wrapper by the Ctrl+C shortcut too.
 
-The wrapper stores CSV reports in the "csv" subdirectory.
+The wrapper stores CSV reports in the `csv` subdirectory.
 
 You can change the activity name and the path for reports in the `tracker.sh` wrapper. Specify these parameters in the `ACTIVITY` and `REPORTS_DIR` variables there.
 
@@ -34,14 +34,18 @@ You can change the activity name and the path for reports in the `tracker.sh` wr
 
 Here is an example to retrieve statistics for the current date:
 ```bash
-./stat.py work "csv/$(date +%Y-%m-%d).csv"
+./stat.py "csv/$(date +%Y-%m-%d).csv"
 ```
 
-It shows the overall time you spent doing the `work` activity.
+It shows the overall time you spent for each activity in this day.
 
-The same data you can retrieve with the Bash wrapper:
+The Bash wrapper shows you statistics for today. Run it this way:
 ```bash
 ./stat.sh
 ```
 
-The `stat.sh` wrapper has the same `ACTIVITY` and `REPORTS_DIR` variables as the `tracker.sh` script.
+You can change the path to CSV reports in the `REPORTS_DIR` variables there.
+
+## Contacts
+
+If you have suggestions, bug reports or questions about Time Tracker usage, please contact me via email petrsum@gmail.com.
