@@ -39,10 +39,10 @@ def parse_lines(activity, reader):
 
     overall_time += calculate_time(line)
 
-    print("{};{};{}".format(activity, get_value("Start_Time", line, _CSV_COLUMNS), \
-          get_value("End_Time", line, _CSV_COLUMNS)))
+    #print("{};{};{}".format(activity, get_value("Start_Time", line, _CSV_COLUMNS), \
+    #      get_value("End_Time", line, _CSV_COLUMNS)))
 
-  print("\noverall time = {} ({} s)".format(str(datetime.timedelta(seconds=overall_time)), overall_time))
+  print("\nactivity = {} time = {} ({} s)".format(activity, str(datetime.timedelta(seconds=overall_time)), overall_time))
 
 def show_statistics(activity, csv_file):
   with open(csv_file, "rU") as file_obj:
