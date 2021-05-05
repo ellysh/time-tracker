@@ -21,7 +21,7 @@ When you are done with your activity, interrupt the script by the Ctrl+C shortcu
 
 Another option is to use the Bash wrapper instead of the `tracker.py` script. Run the wrapper this way:
 ```bash
-./tracker.sh
+./tracker-today.sh "work"
 ```
 
 Stop the wrapper by the Ctrl+C shortcut too.
@@ -29,6 +29,18 @@ Stop the wrapper by the Ctrl+C shortcut too.
 The wrapper stores CSV reports in the `csv` subdirectory.
 
 You can change the activity name and the path for reports in the `tracker.sh` wrapper. Specify these parameters in the `ACTIVITY` and `REPORTS_DIR` variables there.
+
+### Adding Time Manually
+
+You can add time to the CSV report manually. Use the `add-time.py` script for that. Call the script this way:
+```bash
+./add-time.py work 2h >> "csv/$(date +%Y-%m-%d).csv"
+```
+
+The alternative option is using the Bash wrapper like this:
+```bash
+add-time-today.sh work 2h
+```
 
 ### Retrieving Statistic
 
@@ -41,7 +53,7 @@ It shows the overall time you spent for each activity in this day.
 
 The Bash wrapper shows you statistics for today. Run it this way:
 ```bash
-./stat.sh
+./stat-today.sh
 ```
 
 You can change the path to CSV reports in the `REPORTS_DIR` variables there.
